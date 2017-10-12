@@ -1,0 +1,31 @@
+<div class="container">
+<form #df="ngForm" (ngSubmit)="deleteCustomer(df)" class="form-horizontal">
+<div class="form-group">
+	  <label class="control-label col-sm-2"  for="firstName">First Name: </label>
+	  <div class="col-sm-4">
+	  <input required  pattern= "[a-zA-Z]*" ngModel name="firstName" id="firstName" #fn="ngModel"  type="text" class="form-control" placeholder="Enter first name" >
+	  <div class="alert alert-danger" *ngIf="fn.touched && !fn.valid">
+	  	<div *ngIf="fn.errors.required">First name is required.</div>
+	  	<div *ngIf="fn.errors.pattern">First name should be of alphabetical characters only.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2"  for="lastName">Last Name: </label>
+	   <div class="col-sm-4">
+	  <input required pattern= "[a-zA-Z]*" ngModel name="lastName" id="lastName" #ln="ngModel"  type="text" class="form-control" placeholder="Enter last name">
+	  <div class="alert alert-danger" *ngIf="ln.touched && !ln.valid">
+	  	<div *ngIf="ln.errors.required">Last name is required.</div>
+	  	<div *ngIf="ln.errors.pattern">Last name should be of alphabetical characters only.</div>
+	  </div>
+	  </div>
+     </div>	
+     <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" [disabled]="!df.valid" >Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+      </div>
+    </div>
+</form> 
+</div> 
+

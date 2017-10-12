@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+     <h2 class="h2-style">CUSTOMER DETAILS</h2>
+       <div class="table-design">
+          <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Customer Id</th>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company Name</th>
+        <th>Building Number</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Postal Code</th>
+        <th>LandLine Number</th>
+        <th>Mobile Number</th>
+        <th>Primary Email</th>
+        <th>Secondary Email</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody *ngFor=" let customer of customers">
+    
+      <tr>
+        <td>{{customer.customerId}}</td>
+        <td>{{customer.title}}</td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.companyName}}</td>
+        <td>{{customer.buildingNumber}}</td>
+        <td>{{customer.streetAddress}}</td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.region}}</td>
+        <td>{{customer.postalCode}}</td>
+        <td>{{customer.landLine}}</td>
+        <td>{{customer.mobile}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.secondaryEmail}}</td>
+        <td>{{customer.notes}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
+  </div>
+</div>
+            

@@ -1,0 +1,134 @@
+<div class="container">
+<form #f="ngForm" (ngSubmit)="registerCustomer(f)" class="form-horizontal">
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="title">Title : </label>
+	  <div class="col-sm-4">
+	  <input  required minlength="2" ngModel name="title" id="title" #title="ngModel" type="text" class="form-control" placeholder="Enter title">
+	  <div class="alert alert-danger" *ngIf="title.touched && !title.valid">
+	  <div *ngIf="title.errors.required">Title is required</div>
+	  <div *ngIf="title.errors.minlength">Title should be of minimum {{title.errors.minlength.requiredLength}} characters</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2"  for="firstName">First Name: </label>
+	  <div class="col-sm-4">
+	  <input required  pattern= "[a-zA-Z]*" ngModel name="firstName" id="firstName" #fn="ngModel"  type="text" class="form-control" placeholder="Enter first name" >
+	  <div class="alert alert-danger" *ngIf="fn.touched && !fn.valid">
+	  	<div *ngIf="fn.errors.required">First name is required.</div>
+	  	<div *ngIf="fn.errors.pattern">First name should be of alphabetical characters only.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2"  for="lastName">Last Name: </label>
+	   <div class="col-sm-4">
+	  <input required pattern= "[a-zA-Z]*" ngModel name="lastName" id="lastName" #ln="ngModel"  type="text" class="form-control" placeholder="Enter last name">
+	  <div class="alert alert-danger" *ngIf="ln.touched && !ln.valid">
+	  	<div *ngIf="ln.errors.required">Last name is required.</div>
+	  	<div *ngIf="ln.errors.pattern">Last name should be of alphabetical characters only.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="companyName">Company Name: </label>
+	  <div class="col-sm-4">
+	  <input required  ngModel name="companyName" id="companyName" #cn="ngModel"  type="text" class="form-control" placeholder="Enter company name" >
+	  <div class="alert alert-danger" *ngIf="cn.touched && !cn.valid">Company name is required.</div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2"  for="buildingNumber">Building Number: </label>
+	  <div class="col-sm-4">
+	  <input required pattern= "[0-9]*" ngModel name="buildingNumber" id="buildingNumber" #bn="ngModel"  type="text" class="form-control" placeholder="Enter building number">
+	  <div class="alert alert-danger" *ngIf="bn.touched && !bn.valid">
+	  	<div *ngIf="bn.errors.required">Building number is required.</div>
+	  	<div *ngIf="bn.errors.pattern">Building number should be of numeric characters only.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2"  for="street">Street Address: </label>
+	  <div class="col-sm-4">
+	  <input required ngModel name="street" id="street" #street="ngModel"  type="text" class="form-control" placeholder="Enter street address">
+	  <div class="alert alert-danger" *ngIf="street.touched && !street.valid">Street address is required.</div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="city">City: </label>
+	  <div class="col-sm-4">
+	  <input required ngModel name="city" id="city" #city="ngModel"  type="text" class="form-control" placeholder="Enter city name">
+	  <div class="alert alert-danger" *ngIf="city.touched && !city.valid">city is required.</div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="region">Region: </label>
+	  <div class="col-sm-4">
+	  <input required ngModel name="region" id="region" #region="ngModel"  type="text" class="form-control" placeholder="Enter region">
+	  <div class="alert alert-danger" *ngIf="region.touched && !region.valid">Region is required.</div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="postalCode">Postal Code: </label>
+	  <div class="col-sm-4">
+	  <input required pattern= "[0-9]*" ngModel name="postalCode" id="postalCode" #pc="ngModel"  type="text" class="form-control" placeholder="Enter postal code">
+	  <div class="alert alert-danger" *ngIf="pc.touched && !pc.valid">
+	  	<div *ngIf="pc.errors.required">Postal code is required.</div>
+	  	<div *ngIf="pc.errors.pattern">Postal code should be of numeric characters only.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="landLine">Landline: </label>
+	  <div class="col-sm-4">
+	  <input required   minlength="6" ngModel name="landLine" id="landLine" #land="ngModel"  type="text" class="form-control" placeholder="Enter landline number">
+	  <div class="alert alert-danger" *ngIf="land.touched && !land.valid">
+	  	 <div *ngIf="land.errors.required">Landline number is required</div>
+	  <div *ngIf="land.errors.minlength">Landline number should be of minimum {{land.errors.minlength.requiredLength}} characters</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="mobile">Mobile: </label>
+	  <div class="col-sm-4">
+	  <input required  minlength="10" ngModel name="mobile" id="mobile" #mobile="ngModel"  type="text" class="form-control" placeholder="Enter mobile number">
+	  <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">
+	  	 <div *ngIf="mobile.errors.required">Mobile number is required</div>
+	  <div *ngIf="mobile.errors.minlength">Mobile number should be of minimum {{mobile.errors.minlength.requiredLength}} characters</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="email">Email: </label>
+	  <div class="col-sm-4">
+	  <input required  pattern="^[a-zA-Z0-9]*@[a-zA-Z]*.com" ngModel name="email" id="email" #email="ngModel"  type="text" class="form-control" placeholder="Enter primary email">
+	  <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+	  	<div *ngIf="email.errors.required">Email id is required.</div>
+	  	<div *ngIf="email.errors.pattern">Email id doesn't match the pattern.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="secondaryEmail">Secondary Email: </label>
+	  <div class="col-sm-4">
+	  <input required  pattern="^[a-zA-Z0-9]*@[a-zA-Z]*.com" ngModel name="secondaryEmail" id="secondaryEmail" #se="ngModel"  type="text" class="form-control" placeholder="Enter secondary email">
+	  <div class="alert alert-danger" *ngIf="se.touched && !se.valid">
+	  		<div *ngIf="se.errors.required">Secondary email id is required.</div>
+	  	<div *ngIf="se.errors.pattern">Secondary email id doesn't match the pattern.</div>
+	  </div>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label  class="control-label col-sm-2" for="notes">Notes: </label>
+	  <div class="col-sm-4">
+	  <input ngModel name="notes" id="notes" #notes="ngModel"  type="text" class="form-control" placeholder="Enter notes">
+	  </div>
+	</div>
+	<div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+      </div>
+    </div>
+</form>
+</div>

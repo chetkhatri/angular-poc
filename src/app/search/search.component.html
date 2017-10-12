@@ -1,0 +1,64 @@
+<div class="container">
+<form #sf="ngForm" (ngSubmit)="searchCustomer(sf)" class="form-inline">
+<div class="form-group">
+	  <label  class="control-label col-sm-4" for="companyName">Company Name: </label>
+	  <div class="col-sm-4">
+	  <input required  ngModel name="companyName" id="companyName" #cn="ngModel"  type="text" class="form-control" placeholder="Enter company name" >
+	  <div class="alert alert-danger" *ngIf="cn.touched && !cn.valid">Company name is required.</div>
+	  </div>
+</div>
+	<div class="form-group">        
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" [disabled]="!sf.valid" >Search</button>
+      </div>
+    </div>
+</form>
+</div>
+     <h2 class="h2-style">CUSTOMER DETAILS</h2>
+       <div class="table-design">
+          <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Customer Id</th>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company Name</th>
+        <th>Building Number</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Postal Code</th>
+        <th>LandLine Number</th>
+        <th>Mobile Number</th>
+        <th>Primary Email</th>
+        <th>Secondary Email</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody *ngFor=" let c of customer">
+    
+      <tr>
+        <td>{{c.customerId}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName}}</td>
+        <td>{{c.companyName}}</td>
+        <td>{{c.buildingNumber}}</td>
+        <td>{{c.streetAddress}}</td>
+        <td>{{c.city}}</td>
+        <td>{{c.region}}</td>
+        <td>{{c.postalCode}}</td>
+        <td>{{c.landLine}}</td>
+        <td>{{c.mobile}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.secondaryEmail}}</td>
+        <td>{{c.notes}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
+  </div>
+
+            
+
